@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FeedbackChoices = ({choices, onLeaveFeedback}) => (
+const FeedbackChoices = ({ options, onLeaveFeedback }) => (
     <div>
-        {choices.map(choice => (
+        {options.map(choice => (
             <button key={choice} onClick={() => onLeaveFeedback(choice)}>{choice}</button>
         ))}
     </div>
 )
 
 FeedbackChoices.propTypes = {
-    choice: PropTypes.arrayOf(PropTypes.string).isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
     onLeaveFeedback: PropTypes.func.isRequired,
-  };
+};
 
-  export default FeedbackChoices;
+export default FeedbackChoices;
