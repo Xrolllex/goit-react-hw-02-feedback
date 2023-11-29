@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Title = ({title, children}) => (
+const Section = ({title, children}) => (
     <section>
         <h2>{title}</h2>
         {children}
@@ -9,9 +9,9 @@ const Title = ({title, children}) => (
 )
 
 
-Title.propTypes = {
+Section.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
   };
   
-  export default Title;
+  export default Section;

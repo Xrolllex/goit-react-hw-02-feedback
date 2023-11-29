@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FeedbackChoices from './FeedbackChoices';
 import Stats from './Stats';
-import Title from './Title';
+import Section from './Section';
 import Notification from './Notification';
 
 
@@ -13,14 +13,14 @@ class App extends Component {
     bad: 0,
   };
 
-  // Metoda do obsługi kliknięć
+  
   handleFeedback = type => {
     this.setState(prevState => ({
       [type]: prevState[type] + 1,
     }));
   };
 
-  // Pomocnicze metody
+  
   countTotalFeedback = () => {
     return Object.values(this.state).reduce((acc, value) => acc + value, 0);
   };
@@ -38,13 +38,13 @@ class App extends Component {
 
     return (
       <div>
-        <Title title="Please leave feedback">
+        <Section title="Please leave feedback">
           <FeedbackChoices
             options={['good', 'neutral', 'bad']}
             onLeaveFeedback={this.handleFeedback}
           />
-        </Title>
-        <Title title="Statistics">
+        </Section>
+        <Section title="Statistics">
           {totalFeedback > 0 ? (
             <Stats
               good={good}
@@ -56,7 +56,7 @@ class App extends Component {
           ) : (
             <Notification message="There is no feedback" />
           )}
-        </Title>
+        </Section>
       </div>
     );
   }
